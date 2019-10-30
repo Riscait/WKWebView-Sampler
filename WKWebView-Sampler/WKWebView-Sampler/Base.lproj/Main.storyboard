@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WKWebView_Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWP-fJ-BE3" userLabel="Header View">
+                                <rect key="frame" x="0.0" y="44" width="414" height="20"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="l3C-nq-zEW">
+                                        <rect key="frame" x="145.5" y="0.0" width="123.5" height="20"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ssl" translatesAutoresizingMaskIntoConstraints="NO" id="LWw-9M-fhG">
+                                                <rect key="frame" x="0.0" y="3.5" width="13" height="13"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="LWw-9M-fhG" secondAttribute="height" multiplier="1:1" id="eUf-6w-1Nr"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://www.sony.jp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-KX-hVo">
+                                                <rect key="frame" x="20" y="3.5" width="103.5" height="13"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="13" id="5Q2-kC-AX1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="LWw-9M-fhG" firstAttribute="height" secondItem="jYF-KX-hVo" secondAttribute="height" id="3Pf-da-IKW"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="l3C-nq-zEW" secondAttribute="bottom" id="2Vk-Jw-1h9"/>
+                                    <constraint firstItem="l3C-nq-zEW" firstAttribute="centerX" secondItem="qWP-fJ-BE3" secondAttribute="centerX" id="DWd-Co-a6t"/>
+                                    <constraint firstItem="l3C-nq-zEW" firstAttribute="top" secondItem="qWP-fJ-BE3" secondAttribute="top" id="aQg-1z-Q8w"/>
+                                    <constraint firstAttribute="height" constant="20" id="acq-vL-ilF"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8s-qB-b5w">
+                                <rect key="frame" x="0.0" y="64" width="414" height="749"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="52f-8w-9hf">
+                                <rect key="frame" x="0.0" y="64" width="414" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="jsf-Qx-BbV"/>
+                                </constraints>
+                            </progressView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="iQh-JN-Q1A">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="back" image="back" id="kKy-rz-aui">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="backPage:" destination="BYZ-38-t0r" id="JVR-Kq-iEp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qo5-rx-bYf"/>
+                                    <barButtonItem image="forward" id="edl-4u-o1L">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="forwardPage:" destination="BYZ-38-t0r" id="Rqh-JG-i4q"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IFl-YE-4MH"/>
+                                    <barButtonItem title="share" image="share" id="RVe-Jg-CoZ">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="sharePage:" destination="BYZ-38-t0r" id="LQN-PH-6BR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tx3-cs-0Un"/>
+                                    <barButtonItem title="reload" image="reload" id="s1B-dR-00D">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="reloadPage:" destination="BYZ-38-t0r" id="ZGO-ci-DLH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fsl-Kn-t6B"/>
+                                    <barButtonItem title="close" image="close" id="NCs-el-EqB">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="closePage:" destination="BYZ-38-t0r" id="AdN-qY-dBl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iQh-JN-Q1A" firstAttribute="top" secondItem="S8s-qB-b5w" secondAttribute="bottom" id="2Gf-cB-YVq"/>
+                            <constraint firstItem="S8s-qB-b5w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4P6-NY-T1p"/>
+                            <constraint firstAttribute="trailing" secondItem="52f-8w-9hf" secondAttribute="trailing" id="G3w-TY-rkx"/>
+                            <constraint firstItem="iQh-JN-Q1A" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GJt-Io-Bga"/>
+                            <constraint firstItem="iQh-JN-Q1A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GL1-Vq-Rp5"/>
+                            <constraint firstItem="52f-8w-9hf" firstAttribute="top" secondItem="qWP-fJ-BE3" secondAttribute="bottom" id="Hns-dk-3jW"/>
+                            <constraint firstItem="qWP-fJ-BE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K6Y-3w-LL8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qWP-fJ-BE3" secondAttribute="trailing" id="Shh-YR-YFM"/>
+                            <constraint firstItem="S8s-qB-b5w" firstAttribute="top" secondItem="qWP-fJ-BE3" secondAttribute="bottom" id="gTb-f8-nbO"/>
+                            <constraint firstItem="iQh-JN-Q1A" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jad-uS-6Ug"/>
+                            <constraint firstItem="qWP-fJ-BE3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qLX-gR-8ge"/>
+                            <constraint firstItem="52f-8w-9hf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sJR-HD-Zmn"/>
+                            <constraint firstItem="S8s-qB-b5w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xdH-U4-6YL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="kKy-rz-aui" id="Z7r-yV-4CI"/>
+                        <outlet property="forwardButton" destination="edl-4u-o1L" id="s1t-GA-uN0"/>
+                        <outlet property="headerStackView" destination="l3C-nq-zEW" id="nB7-c9-9Ij"/>
+                        <outlet property="headerView" destination="qWP-fJ-BE3" id="KnE-Fx-9nR"/>
+                        <outlet property="headerViewHeightConstraint" destination="acq-vL-ilF" id="AJo-pQ-3QL"/>
+                        <outlet property="progressView" destination="52f-8w-9hf" id="B3X-dK-nZK"/>
+                        <outlet property="sslIconView" destination="LWw-9M-fhG" id="ADb-oL-Y4O"/>
+                        <outlet property="toolbar" destination="iQh-JN-Q1A" id="WCJ-1h-Bpe"/>
+                        <outlet property="urlHostLabel" destination="jYF-KX-hVo" id="Uy8-Ug-Gwz"/>
+                        <outlet property="webView" destination="S8s-qB-b5w" id="f4g-CA-xtr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="-80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="28" height="28"/>
+        <image name="close" width="28" height="28"/>
+        <image name="forward" width="28" height="28"/>
+        <image name="reload" width="28" height="28"/>
+        <image name="share" width="28" height="28"/>
+        <image name="ssl" width="8" height="10"/>
+    </resources>
+</document>
