@@ -39,6 +39,8 @@ final class ViewController: UIViewController {
     private let animationDuration = 0.2
     private let scrollPaddingAnimation: CGFloat = 30.0
     private var scrollStartPoint: CGPoint = .zero
+    
+    // KVO
     private var observation: NSKeyValueObservation?
 
     
@@ -90,25 +92,23 @@ final class ViewController: UIViewController {
         }
         
         // ProgressLoading処理
-        observation = webView.observe(\WKWebView.estimatedProgress, options: .new) { _, _ in
-            let changeValue = Float(self.webView.estimatedProgress)
-            
+        observation = webView.observe(\.estimatedProgress, options: .new) { webView, change in
             // Loadingバー表示
             self.progressView.alpha = 1
             
             // 読み込み状態更新
-            self.progressView.setProgress(changeValue, animated: true)
+            self.progressView.setProgress(Float(change.newValue!), animated: true)
             
             // 読み込み完了したらLoadingバー未表示
-            if (self.webView.estimatedProgress == 1.0) {
+            if (Float(change.newValue!) >= 1.0) {
                 UIView.animate(withDuration: 0.3,
-                               delay: 0,
+                               delay: 0.3,
                                options: [.curveEaseOut],
                                animations: { [weak self] in
                                 self?.progressView.alpha = 0.0
-                    }, completion: { _ in
+                    }) { _ in
                         self.progressView.setProgress(0.0, animated: false)
-                })
+                }
             }
         }
     }
